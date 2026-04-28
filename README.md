@@ -130,9 +130,9 @@ sudo systemctl status ddos-alert  # Проверка статуса
 # Структура файлов
 
 ### servers.json настройка
-- PASTE_BOT_TOKEN = нужен токен из @botfather
-- PASTE_CHAT_ID = нужен ваш ChatID, то есть в какой чат будет отсылаться
-- VDS1, VDS2 и тд. = Добавляем новые сервера с IP. inline кнопки будут появляться автоматически
+- `PASTE_BOT_TOKEN` = нужен токен из @botfather
+- `PASTE_CHAT_ID` = нужен ваш ChatID, то есть в какой чат будет отсылаться
+- `VDS1, VDS2 и тд`. = Добавляем новые сервера с IP. inline кнопки будут появляться автоматически
 
 ```bash
 {
@@ -162,14 +162,11 @@ MAX_RX_MBPS = 45.0
 MAX_CONN_PER_IP = 300
 ALERT_COOLDOWN_SECONDS = 2000
 ```
-```
-MAX_TOTAL_CONNECTIONS
-```
+`MAX_TOTAL_CONNECTIONS`
 Если соединений больше 2000, будет тревога.
 Для нагруженных proxy/VPN лучше повысить до максимум 15000
-```
-MAX_SYN_RECV
-```
+
+`MAX_SYN_RECV`
 Максимальное количество полуоткрытых TCP-соединений.
 Ловит:
 - SYN flood
@@ -181,9 +178,7 @@ MAX_SYN_RECV
 - SYN_RECV: 500
 Рекомендуемые значения до 500
 
-```
-MAX_RX_MBPS
-```
+`MAX_RX_MBPS`
 Порог входящего трафика (Mbps).
 Если входящий поток выше 45 Mbp, будет алерт.
 Обнаруживает:
@@ -197,9 +192,7 @@ MAX_RX_MBPS
 300
 500
   
-```
-MAX_CONN_PER_IP
-```
+`MAX_CONN_PER_IP`
 Максимум соединений от одного IP.
 Ловит:
 - один атакующий IP
@@ -209,9 +202,7 @@ MAX_CONN_PER_IP
 1000
 1500
   
-```
-ALERT_COOLDOWN_SECONDS
-```
+`ALERT_COOLDOWN_SECONDS`
 Антиспам между повторными алертами. 2000 секунд ≈ 33 минуты
 Логика:
 атака началась → алерт
