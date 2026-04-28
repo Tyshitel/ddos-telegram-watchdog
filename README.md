@@ -71,8 +71,8 @@ ipset create proxy_blacklist hash:ip timeout 9000 -exist
 iptables -I INPUT -m set --match-set proxy_blacklist src -j DROP
 ```
 
-### Открыть порт в firewall на VDS2
-# Порт 9000 должен быть открыт только для VDS1
+## Открыть порт в firewall на VDS2
+### Порт 9000 должен быть открыт только для VDS1
 ```bash
 sudo ufw allow from VDS1_IP to any port 9000 proto tcp
 ```
