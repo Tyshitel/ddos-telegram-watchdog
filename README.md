@@ -28,15 +28,15 @@ agent.py           |
 ddos_alert.py      |
 
 # Этапы:
-## Установка
+### Установка
 ```bash
 sudo apt update
 sudo apt install -y python3 python3-requests ipset iptables
 ```
-## Скачиваем файлы
+### Скачиваем файлы
 Скаченые файлы можно положить в папку /home/user/ddos_alert или сразу в /opt/ddos_alert
 
-## Создаем папки на VDS, если не были созданы
+### Создаем папки на VDS, если не были созданы
 VDS1
 ```bash
 mkdir /opt/ddos_alert 
@@ -60,19 +60,19 @@ cd /opt/ddos_alert
 chmod +7 *.py
 ```
 
-## Правило для iptables 
+### Правило для iptables 
 ```bash
 # Обязательно, если хотим чтобы бан работал
 ipset create proxy_blacklist hash:ip timeout 9000 -exist
 iptables -I INPUT -m set --match-set proxy_blacklist src -j DROP
 ```
 
-## Открыть порт в firewall на VDS2
+### Открыть порт в firewall на VDS2
 ```bash
 # Порт 9000 должен быть открыт только для VDS1
 sudo ufw allow from VDS1_IP to any port 9000 proto tcp
 ```
-## Создаем systemd 
+### Создаем systemd 
 Под agent.py
 ```bash
 sudo nano /etc/systemd/system/ddos-agent.service
@@ -124,7 +124,7 @@ sudo systemctl status ddos-alert  # Проверка статуса
 
 # Структура файлов
 
-## servers.json настройка
+### servers.json настройка
 - PASTE_BOT_TOKEN = нужен токен из @botfather
 - PASTE_CHAT_ID = нужен ваш ChatID, то есть в какой чат будет отсылаться
 - VDS1, VDS2 и тд. = Добавляем новые сервера с IP. inline кнопки будут появляться автоматически
@@ -148,7 +148,7 @@ sudo systemctl status ddos-alert  # Проверка статуса
 }
 ```
 
-## ddos_alert.py настройка
+### ddos_alert.py настройка
 Настраиваются пороги при котором будет срабатывать алерт
 ```bash
 MAX_TOTAL_CONNECTIONS = 2000 
@@ -213,7 +213,7 @@ MAX_CONN_PER_IP = 1500
 ALERT_COOLDOWN_SECONDS = 600
 ```
 
-## Логика срабатывания
+### Логика срабатывания
 Алерт отправляется если выполняется любое условие:
 ```bash
 Connections > MAX_TOTAL_CONNECTIONS
