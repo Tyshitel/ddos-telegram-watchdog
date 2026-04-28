@@ -38,40 +38,45 @@ sudo apt install -y python3 python3-requests ipset iptables
 
 ### Создаем папки на VDS, если не были созданы
 VDS1
+Здесь мы оставляем из архива такие файлы как:
+- servers.json
+- agent.py
+- ddos_alert.py
 ```bash
 mkdir /opt/ddos_alert 
 cd /opt/ddos_alert
-# Здесь мы оставляем из архива такие файлы как:
-# servers.json
-# agent.py
-# ddos_alert.py
-
-# и даем им разрешение:
-chmod +7 *.py
+mv /home/user/ddo_alert /opt/ddos_alert # Нужно понимать где у вас расположен архив
+```
+Даем им разрешение:
+```bash
+chmod +7 /opt/ddos_alert/*.py
 ```
 VDS2
+Здесь мы оставляем из архива такие файлы как:
+- agent.py
 ```bash
 mkdir /opt/ddos_alert
 cd /opt/ddos_alert
-# Здесь мы оставляем из архива такие файлы как:
-# agent.py
-
-# и даем разрешение:
-chmod +7 *.py
+mv /home/user/ddo_alert /opt/ddos_alert # Нужно понимать где у вас расположен архив
+```
+Даем разрешение:
+```bash
+chmod +7 /opt/ddos_alert/*.py
 ```
 
 ### Правило для iptables 
+Обязательно, если хотим чтобы бан работал
 ```bash
-# Обязательно, если хотим чтобы бан работал
 ipset create proxy_blacklist hash:ip timeout 9000 -exist
 iptables -I INPUT -m set --match-set proxy_blacklist src -j DROP
 ```
 
 ### Открыть порт в firewall на VDS2
-```bash
 # Порт 9000 должен быть открыт только для VDS1
+```bash
 sudo ufw allow from VDS1_IP to any port 9000 proto tcp
 ```
+
 ### Создаем systemd 
 Под agent.py
 ```bash
