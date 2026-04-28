@@ -37,7 +37,7 @@ sudo apt install -y python3 python3-requests ipset iptables
 Скаченые файлы можно положить в папку /home/user/ddos_alert или сразу в /opt/ddos_alert
 
 ### Создаем папки на VDS, если не были созданы
-VDS1
+`VDS1`
 Здесь мы оставляем из архива такие файлы как:
 - servers.json
 - agent.py
@@ -51,7 +51,7 @@ mv /home/user/ddo_alert /opt/ddos_alert # Нужно понимать где у 
 ```bash
 chmod +7 /opt/ddos_alert/*.py
 ```
-VDS2
+`VDS2`
 Здесь мы оставляем из архива такие файлы как:
 - agent.py
 ```bash
@@ -229,7 +229,7 @@ RX > MAX_RX_MBPS
 или
 Single IP > MAX_CONN_PER_IP
 ```
-# agent.py настройка
+### agent.py настройка
 Здесь можно добавлять IP и подсети, которые будут игнорироваться ботом
 ```bash
 WHITELIST_IPS = {
