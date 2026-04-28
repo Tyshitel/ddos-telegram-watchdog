@@ -76,7 +76,8 @@ sudo ufw allow from VDS1_IP to any port 9000 proto tcp
 Под agent.py
 ```bash
 sudo nano /etc/systemd/system/ddos-agent.service
------
+```
+```bash
 [Unit]
 Description=DDoS Metrics Agent
 After=network-online.target
@@ -94,7 +95,8 @@ WantedBy=multi-user.target
 Под ddos_alert.py
 ```bash
 sudo nano /etc/systemd/system/ddos-alert.service
------
+```
+```bash
 [Unit]
 Description=DDoS Telegram Alert Bot
 After=network-online.target
