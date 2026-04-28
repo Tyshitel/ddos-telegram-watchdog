@@ -156,12 +156,15 @@ MAX_SYN_RECV = 300
 MAX_RX_MBPS = 45.0
 MAX_CONN_PER_IP = 300
 ALERT_COOLDOWN_SECONDS = 2000
-
-# MAX_TOTAL_CONNECTIONS
+```
+```
+MAX_TOTAL_CONNECTIONS
+```
 Если соединений больше 2000, будет тревога.
 Для нагруженных proxy/VPN лучше повысить до максимум 15000
-
-# MAX_SYN_RECV
+```
+MAX_SYN_RECV
+```
 Максимальное количество полуоткрытых TCP-соединений.
 Ловит:
 - SYN flood
@@ -173,7 +176,9 @@ ALERT_COOLDOWN_SECONDS = 2000
 - SYN_RECV: 500
 Рекомендуемые значения до 500
 
-# MAX_RX_MBPS
+```
+MAX_RX_MBPS
+```
 Порог входящего трафика (Mbps).
 Если входящий поток выше 45 Mbp, будет алерт.
 Обнаруживает:
@@ -186,8 +191,10 @@ ALERT_COOLDOWN_SECONDS = 2000
 200
 300
 500
-
-# MAX_CONN_PER_IP
+  
+```
+MAX_CONN_PER_IP
+```
 Максимум соединений от одного IP.
 Ловит:
 - один атакующий IP
@@ -196,13 +203,17 @@ ALERT_COOLDOWN_SECONDS = 2000
 Для proxy обычно лучше выше:
 1000
 1500
-
-# ALERT_COOLDOWN_SECONDS
+  
+```
+ALERT_COOLDOWN_SECONDS
+```
 Антиспам между повторными алертами. 2000 секунд ≈ 33 минуты
 Логика:
 атака началась → алерт
 атака продолжается → молчит
 прошло 33 минуты → повторный алерт
+```
+
 ```
 Рекомендуемые значения для Proxy/VPN
 ```bash
