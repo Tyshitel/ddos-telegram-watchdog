@@ -89,7 +89,6 @@ User=root
 
 [Install]
 WantedBy=multi-user.target
-----
 ```
 
 Под ddos_alert.py
@@ -108,7 +107,6 @@ User=root
 
 [Install]
 WantedBy=multi-user.target
-----
 ```
 На каждой VDS
 ```bash
