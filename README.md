@@ -39,9 +39,9 @@ sudo apt install -y python3 python3-requests ipset iptables
 ### Создаем папки на VDS, если не были созданы
 `VDS1`
 Здесь мы оставляем из архива такие файлы как:
-- servers.json
-- agent.py
-- ddos_alert.py
+- `servers.json`
+- `agent.py`
+- `ddos_alert.py`
 ```bash
 mkdir /opt/ddos_alert 
 cd /opt/ddos_alert
@@ -53,7 +53,7 @@ chmod +7 /opt/ddos_alert/*.py
 ```
 `VDS2`
 Здесь мы оставляем из архива такие файлы как:
-- agent.py
+- `agent.py`
 ```bash
 mkdir /opt/ddos_alert
 cd /opt/ddos_alert
