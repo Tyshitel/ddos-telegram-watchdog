@@ -256,8 +256,8 @@ WHITELIST_IPS = {
 }
 
 WHITELIST_NETWORKS = [
-    "149.154.160.0/20",
-    "91.108.4.0/22"
+    "Ip/network",
+    "ip/network"
 ]
 ```
 # Проверка бана
