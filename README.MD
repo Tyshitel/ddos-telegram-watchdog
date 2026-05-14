@@ -220,7 +220,7 @@ sudo systemctl status ddos-alert
 
 ---
 
-# Настройка servers.json
+### Настройка servers.json
 
 ```json
 {
