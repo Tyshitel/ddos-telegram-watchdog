@@ -12,20 +12,6 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 HOST = "0.0.0.0"
 PORT = 9000
 
-<<<<<<< HEAD
-NET_IFACE = "сетефой интерфейс"
-
-WATCH_PORTS = [
-    Указанть порт,
-    Указать порт,
-    
-]
-
-PORT_NAMES = {
-    Порт: "Имя",
-    Порт: "Имя",
-    
-=======
 NET_IFACE = "ens3"
 
 WATCH_PORTS = [13136, 443, 1194, 13137, 65535]
@@ -36,19 +22,10 @@ PORT_NAMES = {
     1194: "OpenVPN",
     13137: "3x-ui/Mixed",
     65535: "Proxy"
->>>>>>> 03a8eef (Улучшен код. Добавлен всплаывающие подсказки команд)
 }
 
 WHITELIST_IPS = {
     "127.0.0.1",
-<<<<<<< HEAD
-    "::1"    
-}
-
-WHITELIST_NETWORKS = [
-    "подсеть",
-    "подсеть"
-=======
     "::1",
     "91.102.154.68"
 }
@@ -56,16 +33,11 @@ WHITELIST_NETWORKS = [
 WHITELIST_NETWORKS = [
     "149.154.160.0/20",
     "91.108.4.0/22"
->>>>>>> 03a8eef (Улучшен код. Добавлен всплаывающие подсказки команд)
 ]
 
 IPSET_NAME = "proxy_blacklist"
 RX_STATE_FILE = "/tmp/ddos-agent-rx-state.json"
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 03a8eef (Улучшен код. Добавлен всплаывающие подсказки команд)
 def run_cmd(cmd):
     try:
         return subprocess.check_output(
@@ -208,10 +180,6 @@ def read_rx_mbps():
 
     return mbps
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 03a8eef (Улучшен код. Добавлен всплаывающие подсказки команд)
 def parse_connections():
     out = run_cmd("ss -nt")
 
