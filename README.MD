@@ -108,7 +108,7 @@ chmod +x /opt/ddos_alert/*.py
 
 ---
 
-# Правило для iptables
+## Правило для iptables
 
 Обязательно, если нужен ban.
 
@@ -129,7 +129,7 @@ sudo ufw allow from VDS1_IP to any port 9000 proto tcp
 
 ---
 
-# Создание systemd
+## Создание systemd
 
 Для `agent.py`
 
