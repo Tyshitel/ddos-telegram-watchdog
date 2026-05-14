@@ -177,7 +177,7 @@ WantedBy=multi-user.target
 
 # Запуск
 
-## На каждой VDS
+### На каждой VDS
 
 ```bash
 sudo systemctl daemon-reload
@@ -188,7 +188,7 @@ sudo systemctl status ddos-agent
 
 ---
 
-## На VDS1
+### На VDS1
 
 ```bash
 sudo systemctl start ddos-alert
