@@ -132,7 +132,7 @@ chmod +x /opt/ddos_alert/*.py
 
 # Правило для iptables
 
-Обязательно, если нужен autoban.
+Обязательно, если нужен ban.
 
 ```bash
 ipset create proxy_blacklist hash:ip timeout 9000 -exist
