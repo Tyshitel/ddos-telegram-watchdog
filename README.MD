@@ -282,7 +282,7 @@ ALERT_COOLDOWN_SECONDS = 2000
 
 `MAX_SYN_RECV` Максимальное количество полуоткрытых TCP-соединений. Ловит:
 
-SYN flood
+* SYN flood
 * exhaustion атаки
 * handshake flood Норма:
 * SYN_RECV: 2 Подозрительно:
