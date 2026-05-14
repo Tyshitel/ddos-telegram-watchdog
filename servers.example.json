@@ -1,0 +1,16 @@
+{
+  "telegram": {
+    "bot_token": "PASTE_BOT_TOKEN",
+    "chat_id": "PASTE_CHAT_ID"
+  },
+  "servers": [
+    {
+      "name": "VDS1",
+      "url": "http://127.0.0.1:9000/metrics"
+    },
+    {
+      "name": "VDS2",
+      "url": "http://VDS2_IP:9000/metrics"
+    }
+  ]
+}
