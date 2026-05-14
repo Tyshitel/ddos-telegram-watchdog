@@ -267,23 +267,24 @@ Inline-кнопки и Telegram-команды создаются автомат
 
 Настраиваются пороги при котором будет срабатывать алерт
 
-```bash
+```pythone
 MaX_TOTAL_CONNECTIONS = 2000 
 MAX_SYN_RECV = 300
 MAX_RX_MBPS = 45.0
 MAX_CONN_PER_IP = 300
 ALERT_COOLDOWN_SECONDS = 2000
-MAX_TOTAL_CONNECTIONS Если соединений больше 2000, будет тревога. Для нагруженных proxy/VPN лучше повысить до максимум 15000
 ```
+
+`MAX_TOTAL_CONNECTIONS` Если соединений больше 2000, будет тревога. Для нагруженных proxy/VPN лучше повысить до максимум 15000
 
 `MAX_SYN_RECV` Максимальное количество полуоткрытых TCP-соединений. Ловит:
 
 SYN flood
-exhaustion атаки
-handshake flood Норма:
-SYN_RECV: 2 Подозрительно:
-SYN_RECV: 500 Рекомендуемые значения до 500
-MAX_RX_MBPS Порог входящего трафика (Mbps). Если входящий поток выше 45 Mbp, будет алерт. Обнаруживает:
+* exhaustion атаки
+* handshake flood Норма:
+* SYN_RECV: 2 Подозрительно:
+* SYN_RECV: 500 Рекомендуемые значения до 500
+* MAX_RX_MBPS Порог входящего трафика (Mbps). Если входящий поток выше 45 Mbp, будет алерт. Обнаруживает:
 
 volumetric DDoS
 UDP flood
@@ -309,7 +310,7 @@ ALERT_COOLDOWN_SECONDS = 600
 
 Алерт отправляется если выполняется любое условие:
 
-```text
+```python
 Connections > MAX_TOTAL_CONNECTIONS
 или
 SYN_RECV > MAX_SYN_RECV
